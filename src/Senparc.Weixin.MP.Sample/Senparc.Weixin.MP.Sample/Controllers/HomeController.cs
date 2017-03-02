@@ -8,6 +8,12 @@ namespace Senparc.Weixin.MP.Sample.Controllers
 {
     public class HomeController : Controller
     {
+        public IActionResult Test()
+        {
+            var context = Senparc.Weixin.MP.Sample.CommonService.Utilities.Server.HttpContext;
+            return Content(context.GetHashCode().ToString());
+        }
+
         public IActionResult Index()
         {
             return View();
